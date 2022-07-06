@@ -1,3 +1,8 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 .App {
   text-align: center;
 }
@@ -12,20 +17,30 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo{
+  padding-right: 2rem;
+  padding-left: 2rem;
+  color:white;
 }
-
-.App-link {
-  color: #61dafb;
+.navBar{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.a:hover{
+  background-color: #111;
 }
 
 @keyframes App-logo-spin {
