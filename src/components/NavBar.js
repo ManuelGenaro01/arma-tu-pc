@@ -1,16 +1,20 @@
 import React from "react";
+import CartWidget from "./CartWidget";
 
-const NavBar = () => {
+function NavBar() {
     return (
         <div className="navStyle">
-            <ul className="navBar">
-                <li><h3 className="logo">Todo Computación!</h3></li>
-                <li><a href="#" className="a">Procesadores</a></li>
-                <li><a href="#" className="a">Motherboards</a></li>
-                <li><a href="#" className="a">Memorias Ram</a></li>
-                <li><a href="#" className="a">GPU</a></li>
-            </ul>
+            <div className="navBar">
+                <p><h3 className="logo">Todo Computación!</h3></p>
+                <p><a href="#" className="a">Procesadores</a></p>
+                <p><a href="#" className="a">Motherboards</a></p>
+                <p><a href="#" className="a">Memorias Ram</a></p>
+                <p><a href="#" className="a">GPU</a></p>
+                <p><a href="#" className="a cart"><CartWidget /></a></p>
+            </div>
         </div>
+        
     )
+    
 };
-export default NavBar
+export default NavBar;
