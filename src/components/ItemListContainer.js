@@ -1,12 +1,15 @@
 import React from "react";
 
-function ItemListContainer(){
+const ProductosEjemplo =(props)=>{
     return(
-<div className="section">
-    <h1>Bienvenido a Todo Computación!</h1>
-    <p>Aquí podrás encontrar muchisimos componentes para tu pc a muy buenos precios!</p>
-</div>
+        <>
+        <div className="section">
+        <ul>
+        <li><p><a href="#">{props.nombre}</a></p><p>{props.precio}</p></li>
+        </ul>
+        </div>
+        </>
     )
 }
 
-export default ItemListContainer
+export default ProductosEjemplo
