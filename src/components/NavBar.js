@@ -13,14 +13,6 @@ function NavBar() {
                 <p><a href="#" className="a">GPU</a></p>
                 <p><a href="#" className="a cart"><CartWidget /></a></p>
             </div>
-            <div className="section">
-                <h1>Bienvenido a Todo Computación!</h1>
-                <p>Aquí podrás encontrar muchisimos componentes para tu pc a muy buenos precios!</p>
-            </div>
-            <hr />
-            <ProductosEjemplo nombre="Ryzen 5 5600G" precio="250USD$"/>
-            <hr />
-                <ProductosEjemplo nombre="ASUS RTX 3060" precio="600USD$"/>
         </div>
         
         
