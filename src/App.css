@@ -33,6 +33,21 @@
   background-color: #333;
   width: 100%;
 }
+.button{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom:1rem;
+}
+.button button{
+  width:30px;
+  height: 30px;
+}
+.button .cantidad{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .a{
   display: block;
   color: white;
@@ -44,8 +59,8 @@
   background-color: #111;
 }
 .section{
+  width: 100%;
   padding-top:2rem;
-  padding-bottom: 2rem;
 }
 @keyframes App-logo-spin {
   from {

@@ -5,7 +5,10 @@ const ProductosEjemplo =(props)=>{
         <>
         <div className="section">
         <ul>
-        <li><p><a href="#">{props.nombre}</a></p><p>{props.precio}</p></li>
+            <li>
+                <p><a href="#">{props.nombre}</a></p>
+                <p>{props.precio}</p>
+            </li>
         </ul>
         </div>
         </>

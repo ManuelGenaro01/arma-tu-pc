@@ -2,6 +2,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import ProductosEjemplo from "./components/ItemListContainer";
+import ItemCount from "./components/ItemCount"
 
 function App() {
   return (
@@ -10,13 +11,15 @@ function App() {
         <NavBar />
       </header>
       <div className="section">
-                <h1>Bienvenido a Todo Computación!</h1>
-                <p>Aquí podrás encontrar muchisimos componentes para tu pc a muy buenos precios!</p>
-            </div>
-            <hr />
-            <ProductosEjemplo nombre="Ryzen 5 5600G" precio="250USD$"/>
-            <hr />
-                <ProductosEjemplo nombre="ASUS RTX 3060" precio="600USD$"/>
+          <h1>Bienvenido a Todo Computación!</h1>
+          <p>Aquí podrás encontrar muchisimos componentes para tu pc a muy buenos precios!</p>
+      </div>
+      <hr />
+      <ProductosEjemplo nombre="Ryzen 5 5600G" precio="250USD$"/>
+      <p className="button"><ItemCount  stock={9} inicioStock={1}  /></p>
+      <hr />
+      <ProductosEjemplo nombre="ASUS RTX 3060" precio="600USD$"/>
+      <p className="button"><ItemCount  stock={3} inicioStock={1}  /></p>
     </div>
   );
 }
