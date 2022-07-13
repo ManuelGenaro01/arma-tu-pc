@@ -1,7 +1,7 @@
 
 import './App.css';
 import NavBar from './components/NavBar';
-import ProductosEjemplo from "./components/ItemListContainer";
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
   return (
@@ -14,9 +14,9 @@ function App() {
           <p>Aquí podrás encontrar muchisimos componentes para tu pc a muy buenos precios!</p>
       </div>
       <hr />
-      <ProductosEjemplo nombre="Ryzen 5 5600G" precio="250USD$" stock={9}/>
+      <ItemListContainer nombre="Ryzen 5 5600G" precio="250USD$" stock={9}/>
       <hr />
-      <ProductosEjemplo nombre="ASUS RTX 3060" precio="600USD$" stock={3}/>
+      <ItemListContainer nombre="ASUS RTX 3060" precio="600USD$" stock={3}/>
     </div>
   );
 }
