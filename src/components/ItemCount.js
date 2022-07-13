@@ -14,13 +14,18 @@ const Cart =(props)=>{
         }
     }
 
+    const onAdd=()=>{
+        alert("Has añadido "+cantidad+" elementos al carrito")
+    }
     return(
         <div>
-            <p>Stock= {props.stock}</p>
             <div className="button">
                 <button onClick={Disminuir}>-</button>
                 <p className="cantidad">{cantidad}</p>
                 <button onClick={Aumentar}>+</button>
+            </div>
+            <div className="buttonCart">
+                <button onClick={onAdd}>Añadir al Carrito</button>
             </div>
         </div>
     )
