@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import ItemListContainer from "./ItemListContainer"
 
-const Cart =(props)=>{
-    const [cantidad, setRates]=useState(props.initial)
+const Cart =({initial, stock, onAdd})=>{
+    const [cantidad, setRates]=useState(initial)
     const Aumentar =()=>{
-        if(cantidad<props.stock){
+        if(cantidad<stock){
         setRates(cantidad+1)
         }
     }
     const Disminuir =()=>{
-        if(cantidad>props.initial){
+        if(cantidad>initial){
         setRates(cantidad-1)
         }
     }
-
     return(
         <div>
             <div className="button">
@@ -21,6 +19,9 @@ const Cart =(props)=>{
                 <p className="cantidad">{cantidad}</p>
                 <button onClick={Aumentar}>+</button>
             </div>
+                <p className="buttonCart">
+                    <button onClick={()=>onAdd(cantidad)}>Añadir al Carrito</button>
+                </p>
         </div>
     )
 }
