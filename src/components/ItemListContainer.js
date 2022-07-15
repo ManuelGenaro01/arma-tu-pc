@@ -1,26 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 import ItemCount from "./ItemCount"
+import ItemList from "./ItemList"
+import {products} from "./Data"
 
-const ProductosEjemplo =(props)=>{
-    const onAdd=(param)=>{
-        alert("Has añadido "+param+" elementos al carrito")
+const ItemListContainer =()=>{
+    const [productList, setProductList]= useState([])
+    const onAdd=(cantidad)=>{
+        alert("Has añadido "+cantidad+" elementos al carrito")
     }
+    const Esperar = new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(products);
+        }, 2000)
+    }
+    )
+    Esperar.then((res)=>{
+        setProductList(res)
+    })
     return(
         <>
         <div className="section">
         <ul>
-            <li>
-                <p><a href="#">{props.nombre}</a></p>
-                <p>{props.precio}</p>
-                <p>Stock= {props.stock}</p>
-                <p className="button">
-                    <ItemCount stock={props.stock} initial={1} onAdd={onAdd} />
-                </p>
-            </li>
+            <ItemList items={productList}/>
+            <ItemCount onAdd={onAdd} initial={1} stock={9}/>
         </ul>
         </div>
         </>
     )
 }
 
-export default ProductosEjemplo
+export default ItemListContainer

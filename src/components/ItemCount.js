@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ItemList from "./ItemList"
 
 const Cart =({initial, stock, onAdd})=>{
     const [cantidad, setRates]=useState(initial)
