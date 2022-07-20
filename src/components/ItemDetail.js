@@ -2,7 +2,7 @@ import React from "react";
 import Item from "./Item";
 import ItemCount from "./ItemCount"
 
-const ItemList=({items})=>{
+const ItemDetail=({items})=>{
     const onAdd=(cantidad)=>{
         alert("Has añadido "+cantidad+" elementos al carrito")
     }
@@ -14,4 +14,4 @@ const ItemList=({items})=>{
     )
 }
 
-export default ItemList
+export default ItemDetail
