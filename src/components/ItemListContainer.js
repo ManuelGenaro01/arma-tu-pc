@@ -18,7 +18,7 @@ const ItemListContainer =()=>{
             .then(result=>setProductList(result))
             .catch(err=>console.log(err))
         }
-    })
+    },[id])
 
     return(
         <>

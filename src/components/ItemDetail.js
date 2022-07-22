@@ -6,13 +6,13 @@ const ItemDetail=({items})=>{
         alert("Has añadido "+cantidad+" elementos al carrito")
     }
     return(
-    <>
-        <p>{items.nombre}</p>
-        <p>{items.precio}</p>
-        <p>{items.description}</p>
-        <p>Stock={items.stock}</p>
-        <ItemCount onAdd={onAdd} initial={1} stock={items.stock}/>
-    </> 
+        <div className="itemDetail">
+            <p>{items.nombre}</p>
+            <p>{items.precio}</p>
+            <p>{items.description}</p>
+            <p>Stock={items.stock}</p>
+            <ItemCount onAdd={onAdd} initial={1} stock={items.stock}/>
+        </div>
     )
 }
 
