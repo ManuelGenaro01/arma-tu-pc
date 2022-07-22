@@ -6,7 +6,7 @@ function NavBar() {
     return (
         <div>
             <ul className="navBar">
-                <li><h3 className="logo">Todo Computación!</h3></li>
+                <li><a href="#" className="logo">Todo Computación!</a></li>
                 <li><a href="#" className="a">Procesadores</a></li>
                 <li><a href="#" className="a">Motherboards</a></li>
                 <li><a href="#" className="a">Memorias Ram</a></li>

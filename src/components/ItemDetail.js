@@ -1,5 +1,4 @@
 import React from "react";
-import Item from "./Item";
 import ItemCount from "./ItemCount"
 
 const ItemDetail=({items})=>{
@@ -8,7 +7,10 @@ const ItemDetail=({items})=>{
     }
     return(
     <>
-        <Item producto={items}/>
+        <p>{items.nombre}</p>
+        <p>{items.precio}</p>
+        <p>{items.description}</p>
+        <p>Stock={items.stock}</p>
         <ItemCount onAdd={onAdd} initial={1} stock={items.stock}/>
     </> 
     )

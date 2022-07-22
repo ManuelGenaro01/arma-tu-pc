@@ -13,7 +13,7 @@ const ItemDetailContainer =()=>{
     return(
         <>
         <div className="section">
-            <ItemDetail items={productList}/>
+            <ItemDetail items={productList} />
         </div>
         </>
     )
