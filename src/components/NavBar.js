@@ -1,17 +1,17 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-import ProductosEjemplo from "./ItemListContainer"
+import {Link} from "react-router-dom"
 
 function NavBar() {
     return (
         <div>
             <ul className="navBar">
-                <li><a href="#" className="logo">Todo Computación!</a></li>
-                <li><a href="#" className="a">Procesadores</a></li>
-                <li><a href="#" className="a">Motherboards</a></li>
-                <li><a href="#" className="a">Memorias Ram</a></li>
-                <li><a href="#" className="a">GPU</a></li>
-                <li><a href="#" className="a cart"><CartWidget /></a></li>
+                <li><Link to="/" className="logo">Todo Computación!</Link></li>
+                <li><Link to="category/1" className="a">Procesadores</Link></li>
+                <li><Link to="category/3" className="a">Motherboards</Link></li>
+                <li><Link to="category/2" className="a">GPU</Link></li>
+                <li><Link to="category/4" className="a">Memorias Ram</Link></li>
+                <li className="a cart"><CartWidget /></li>
             </ul>
         </div>
         

@@ -12,7 +12,7 @@ const ItemList=({items})=>{
             <p>{item.nombre}</p>
             <p>{item.precio}</p>
             <p>Stock={item.stock}</p>
-            <ItemCount onAdd={onAdd} initial={1} stock={item.stock}/></div>)
+            </div>)
     }
     </> 
     )

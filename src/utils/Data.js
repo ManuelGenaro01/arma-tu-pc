@@ -4,7 +4,8 @@ export const products=[
         nombre: "Ryzen 5 5600G",
         precio: "250USD$",
         stock: 9,
-        category:"1"
+        category:"1",
+        description:""
     },
     {
         id:4,
