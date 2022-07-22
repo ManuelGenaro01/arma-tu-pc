@@ -8,7 +8,7 @@ const ItemList=({items})=>{
     }
     return(
     <>{
-        items.map(item=><div>
+        items.map(item=><div className="item">
             <p>{item.nombre}</p>
             <p>{item.precio}</p>
             <p>Stock={item.stock}</p>

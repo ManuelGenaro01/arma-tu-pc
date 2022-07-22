@@ -22,7 +22,7 @@ const ItemListContainer =()=>{
 
     return(
         <>
-        <div className="section">
+        <div className="section lista">
             <ItemList items={productList}/>
         </div>
         </>
