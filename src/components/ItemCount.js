@@ -16,12 +16,12 @@ const Cart =({initial, stock, onAdd})=>{
     return(
         <div>
             <div className="button">
-                <button onClick={Disminuir}>-</button>
+                <button onClick={Disminuir} className="addSub">-</button>
                 <p className="cantidad">{cantidad}</p>
-                <button onClick={Aumentar}>+</button>
+                <button onClick={Aumentar} className="addSub">+</button>
             </div>
-                <p className="buttonCart">
-                    <button onClick={()=>onAdd(cantidad)}>Añadir al Carrito</button>
+                <p>
+                    <button onClick={()=>onAdd(cantidad)} className="buttonCart">Añadir al Carrito</button>
                 </p>
         </div>
     )

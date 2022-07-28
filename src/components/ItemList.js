@@ -1,15 +1,12 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import List from "./List"
 
 const ItemList=({items})=>{
     return(
         
     <>{
-        items.map(item=><div className="item">
-            <p>{item.nombre}</p>
-            <p>{item.precio}</p>
-            <p>Stock={item.stock}</p>
-            <p><Link to={"item/"+item.id} className="itemID"><button className="buttonCart">Detalles</button></Link></p>
+        items.map(item=><div className="item" key={item.id}>
+            <List id={item.id} nombre={item.nombre} precio={item.precio} stock={item.stock} img={item.img}/>
             </div>)
     }
     </> 
