@@ -3,22 +3,23 @@ import { CartContext } from "./CartContext";
 
 const Cart = () =>{
     const test = useContext(CartContext)
-    console.log(test.cartValue)
     return(
         <>
-        <h1>Tu carrito</h1>
+        <h1 className="section">Tu carrito</h1>
         {
             test.cartValue.length>0 && test.cartValue.map(item =>(
                 <div className="listCart">
-                    <p className="cartIMG"><img src={item.img} alt={item.nombre}/></p>
-                    <p>{item.nombre}</p>
-                    <p>{item.precio}</p>
-                    <p>{item.cantidad}</p>
-                    <p><button onClick={()=>test.removeItem(item.id)}>Eliminar</button></p>
+                    <p className="listCartImg"><img src={item.img} alt={item.nombre}/></p>
+                    <div className="listCartNP">
+                        <p>{item.nombre}</p>
+                        <p>{item.precio}</p>
+                    </div>
+                    <p className="listCartCant">{item.cantidad}</p>
+                    <p><button onClick={()=>test.removeItem(item.id)} className="buttonCart">Eliminar</button></p>
                 </div>
             ))
         }
-        <p><button onClick={()=> test.clear()} className="buttonCart">Borrar Carrito</button></p>
+        <p className="center"><button onClick={()=> test.clear()} className="buttonCart">Borrar Carrito</button></p>
         </>
     )
 }

@@ -131,6 +131,28 @@ body{
 .itemList:hover{
   background-color: grey;
 }
+.listCart{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+.listCartIMG{
+  width: 25%;
+}
+.listCartNP{
+  width: 45%;
+  text-align: center;
+}
+.listCartCant{
+  width: 15%;
+  text-align: center;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
