@@ -9,7 +9,7 @@ const List = (props) => {
                 <p><img src={props.img} alt={props.nombre} /></p>
                 <p>{props.nombre}</p>
                 <p>{props.precio}</p>
-                <p>Stock={props.stock}</p>
+                <p style={{"fontWeight":"bold"}}>Stock={props.stock}</p>
             </div>
         </Link>
         </>

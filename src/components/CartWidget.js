@@ -3,7 +3,7 @@ import logo from "../cartIc.png"
 
 const cart =()=>{
     return(
-        <img src={logo} height="21 px" />
+        <img src={logo} height="21 px" alt="cart"/>
     )
 }
 
