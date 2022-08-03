@@ -160,6 +160,16 @@ body{
   flex-direction: column;
   text-align:center;
 }
+.cartWid{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.text{
+  text-decoration: none;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

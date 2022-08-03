@@ -2,13 +2,16 @@ import React, { useContext } from "react";
 import logo from "../cartIc.png"
 import { CartContext } from "./CartContext";
 
-const cart =()=>{
+const CartWidget =()=>{
+    const { totalProductos } = useContext(CartContext)
     return(
         <>
-        <img src={logo} height="21 px" alt="cart"/>
-        <span>{""||""}</span>
+        <div className="cartWid">
+            <img src={logo} height="21 px" alt="cart"/>
+            <p className="text">{(totalProductos())||""}</p>
+        </div>
         </>
     )
 }
 
-export default cart
+export default CartWidget
