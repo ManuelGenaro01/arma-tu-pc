@@ -7,7 +7,7 @@ const CartWidget =()=>{
     return(
         <>
         {cart.cartValue.length>0?
-        <div className="a cartWid">
+        <div className="cartWid">
             <img src={logo} height="21 px" alt="cart"/>
             <p className="text">{(cart.totalProductos())||""}</p>
         </div>:""
