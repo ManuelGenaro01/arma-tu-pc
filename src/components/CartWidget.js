@@ -3,13 +3,15 @@ import logo from "../cartIc.png"
 import { CartContext } from "./CartContext";
 
 const CartWidget =()=>{
-    const { totalProductos } = useContext(CartContext)
+    const cart = useContext(CartContext)
     return(
         <>
-        <div className="cartWid">
+        {cart.cartValue.length>0?
+        <div className="a cartWid">
             <img src={logo} height="21 px" alt="cart"/>
-            <p className="text">{(totalProductos())||""}</p>
-        </div>
+            <p className="text">{(cart.totalProductos())||""}</p>
+        </div>:""
+        }
         </>
     )
 }

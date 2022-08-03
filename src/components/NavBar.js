@@ -11,7 +11,7 @@ function NavBar() {
                 <li><Link to="category/3" className="a">Motherboards</Link></li>
                 <li><Link to="category/2" className="a">GPU</Link></li>
                 <li><Link to="category/4" className="a">Memorias Ram</Link></li>
-                <li className="a cart" style={{"float":"left"}}><Link to="Cart"><CartWidget /></Link></li>
+                <li className="cart" style={{"float":"left"}}><Link to="Cart"><CartWidget /></Link></li>
             </ul>
         </div>
         
