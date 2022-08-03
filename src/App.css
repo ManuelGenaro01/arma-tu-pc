@@ -140,7 +140,8 @@ body{
 }
 .center{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 1rem;
 }
 .listCartIMG{
   width: 25%;
@@ -152,6 +153,12 @@ body{
 .listCartCant{
   width: 15%;
   text-align: center;
+}
+.total{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align:center;
 }
 @keyframes App-logo-spin {
   from {

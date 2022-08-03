@@ -2,24 +2,40 @@ import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 
 const Cart = () =>{
-    const test = useContext(CartContext)
+    const { cartValue, totalPrice } = useContext(CartContext)
     return(
         <>
         <h1 className="section">Tu carrito</h1>
         {
-            test.cartValue.length>0 && test.cartValue.map(item =>(
-                <div className="listCart">
+            cartValue.length>0 && cartValue.map(item =>(
+                <div className="listCart" key={item.nombre}>
                     <p className="listCartImg"><img src={item.img} alt={item.nombre}/></p>
                     <div className="listCartNP">
                         <p>{item.nombre}</p>
-                        <p>{item.precio}</p>
                     </div>
-                    <p className="listCartCant">{item.cantidad}</p>
-                    <p><button onClick={()=>test.removeItem(item.id)} className="buttonCart">Eliminar</button></p>
+                    <div className="listCartCant">
+                        <p>{item.cantidad} Item / {item.precio} Cada uno</p>
+                        <p>{parseInt(item.precio)*parseInt(item.cantidad)}USD$</p>
+                    </div>
+                    <p><button onClick={()=>cartValue.removeItem(item.id)} className="buttonCart">Eliminar</button></p>
                 </div>
             ))
         }
-        <p className="center"><button onClick={()=> test.clear()} className="buttonCart">Borrar Carrito</button></p>
+        {
+            cartValue.length>0?<div>
+                <div className="total">
+                    <p>Subtotal: {totalPrice()}USD$</p>
+                    <p>IVA 21%: {(totalPrice()*0.21).toFixed(2)}USD$</p>
+                    <p style={{"fontWeight":"bold"}}>Total: {(totalPrice()+(totalPrice()*0.21)).toFixed(2)}USD$</p>
+                </div>
+                <div className="center">
+                    <p><button className="buttonCart">Terminar Compra</button></p>
+                    <p><button onClick={()=> cartValue.clear()} className="buttonCart">Borrar Carrito</button></p>
+                </div>
+            </div>
+            :<p className="section">Tu carrito está vacio</p>
+        }
+        
         </>
     )
 }
