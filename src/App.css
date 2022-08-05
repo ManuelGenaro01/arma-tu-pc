@@ -111,11 +111,17 @@ body{
 }
 .itemDetail{
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 50%;
+  padding-top:2rem
 }
 .itemIMG{
   padding-right:3rem;
+  text-align: center;
+}
+.itemDesc{
+  width:20%;
+  text-align: center;
 }
 .itemBuy{
   padding-top:1.5rem;

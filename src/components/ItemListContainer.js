@@ -1,23 +1,23 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from "react-router"
-import customFetch from "../utils/customFetch"
 import ItemList from "./ItemList"
-const {products} =require("../utils/Data")
+import { collection, getDocs, getFirestore, query,where } from "firebase/firestore";
 
 const ItemListContainer =()=>{
     const [productList, setProductList]= useState([])
     const {id} = useParams()
     useEffect(()=>{
-        if(id===undefined){
-            customFetch(0, products)
-            .then(result=>setProductList(result))
-            .catch(err=>console.log(err))
-        }
-        else{
-            customFetch(0, products.filter(item => item.category === id))
-            .then(result=>setProductList(result))
-            .catch(err=>console.log(err))
-        }
+            const querydb = getFirestore();
+            const queryCollect= collection(querydb, "products");
+            if(id){
+                const queryFilter=query(queryCollect,where("category","==",id))
+                getDocs(queryFilter)
+                    .then(res=>setProductList(res.docs.map(product => ({id: product.id, ...product.data()}))))
+            }
+            else{
+                getDocs(queryCollect)
+                    .then(res=>setProductList(res.docs.map(product => ({id: product.id, ...product.data()}))))
+            }
     },[id])
 
     return(

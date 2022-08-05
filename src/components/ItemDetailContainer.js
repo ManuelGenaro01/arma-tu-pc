@@ -1,17 +1,19 @@
 import React, {useState, useEffect} from "react";
-import customFetch from "../utils/customFetch"
 import ItemDetail from "./ItemDetail"
 import {useParams} from "react-router"
-const {products} =require("../utils/Data")
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer =(items)=>{
+    const [data, setData]=useState({})
     const {id} = useParams()
+        useEffect(()=>{
+            const querydb=getFirestore();
+            const queryDoc=doc(querydb,"products",id)
+            getDoc(queryDoc)
+            .then(res=>setData({id: res.id, ...res.data()}))
+        }, [id])
     return(
-        <>
-        <div className="section lista">
-            <ItemDetail items={products[id-1]} />
-        </div>
-        </>
+        <ItemDetail items={data} />
     )
 }
 
