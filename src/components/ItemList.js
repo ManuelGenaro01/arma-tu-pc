@@ -7,7 +7,7 @@ const ItemList=({items})=>{
         
     <>{
         items.map(item=>
-            <List id={item.id} nombre={item.nombre} precio={item.precio} stock={item.stock} img={item.img}/>)
+            <List id={item.id} nombre={item.nombre} precio={item.precio} stock={item.stock} img={item.img} key={item.id}/>)
     }
     </> 
     )
