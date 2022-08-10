@@ -22,7 +22,7 @@ const CartContextProvider = ({children}) =>{
         return cartValue.find(product => product.id === id) ? true:false;
     }
 
-    const removeItem =(id)=>{
+    const borrarItem =(id)=>{
         let newCartValue=cartValue.filter(item => item.id !== id)
         setCartValue(newCartValue)
         toast(`El elemento fue eliminado`,{
@@ -56,8 +56,26 @@ const CartContextProvider = ({children}) =>{
                 icon: "success",
                 confirmButtonColor:"#2a56b5"
               });
-            } else {
-              swal.fire("Tu carrito no ha sido borrado");
+            }
+          })
+    }
+    const removeItem=(id)=>{
+        swal.fire({
+            title: "Estas seguro que quieres borrar este elemento?",
+            icon: "warning",
+            showCancelButton:true,
+            confirmButtonText:"Confirmar",
+            cancelButtonText:"Cancelar",
+            confirmButtonColor:"#2a56b5"
+          })
+          .then((willDelete) => {
+            if (willDelete.isConfirmed) {
+                borrarItem(id)
+              swal.fire({
+                title:"El elemento fue borrado con exito",
+                icon: "success",
+                confirmButtonColor:"#2a56b5"
+              });
             }
           })
     }

@@ -22,9 +22,10 @@ const ItemDetail=({items})=>{
         })
     }
     return(
+        <div className="center">
         <div className="itemDetail">
             <div className="itemIMG">
-                <p><img src={items.img} alt={items.nombre}/></p>
+                <p><img src={items.img} alt={items.nombre} className="imgSize"/></p>
                 <p>{items.nombre}</p>
                 <p>{items.precio}</p>
             </div>
@@ -39,6 +40,7 @@ const ItemDetail=({items})=>{
                 }
                 </div>
             </div>
+        </div>
         </div>
     )
 }

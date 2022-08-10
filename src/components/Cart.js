@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
 import {Link} from "react-router-dom"
 import { addDoc, collection, getFirestore, updateDoc, doc, increment, serverTimestamp } from "firebase/firestore";
@@ -6,21 +6,27 @@ import swal from "sweetalert2"
 
 const Cart = () =>{
     const cart = useContext(CartContext)
+    const [name, setName]=useState("")
+    const [email, setEmail]=useState("")
+    const [phone, setPhone]=useState("")
+    const [address, setAdress]=useState("")
+
 
     let order={
         buyer:{
-            name: "Manuel",
-            email:"manuel@gmail.com",
-            phone:"123123",
-            address:"12"
+            name: {name},
+            email:{email},
+            phone:{phone},
+            address:{address}
         },
         date: serverTimestamp(),
         items:cart.cartValue.map(products => ({id: products.id, nombre:products.nombre, price:products.precio, quantity:products.cantidad})) ,
-        total: cart.totalPrice()
+        total: (cart.totalPrice()*1.21).toFixed(2)
     }
     
 
-    const handleClick=()=>{
+    const handleClick=(e)=>{
+        e.preventDefault();
         const db=getFirestore();
         const orderCollection=collection(db, "order")
         addDoc(orderCollection, order)
@@ -46,8 +52,9 @@ const Cart = () =>{
         <h1 className="section">Tu carrito</h1>
         {
             cart.cartValue.length>0 && cart.cartValue.map(item =>(
+                <div className="center">
                 <div className="listCart" key={item.nombre}>
-                    <p className="listCartImg"><img src={item.img} alt={item.nombre}/></p>
+                    <p className="listCartImg"><img src={item.img} alt={item.nombre} className="imgSize"/></p>
                     <div className="listCartNP">
                         <p>{item.nombre}</p>
                     </div>
@@ -56,6 +63,7 @@ const Cart = () =>{
                         <p>{parseInt(item.precio)*parseInt(item.cantidad)}USD$</p>
                     </div>
                     <p><button onClick={()=>cart.removeItem(item.id)} className="buttonCart">Eliminar</button></p>
+                </div>
                 </div>
             ))
         }
@@ -67,12 +75,21 @@ const Cart = () =>{
                     <p style={{"fontWeight":"bold"}}>Total: {(cart.totalPrice()+(cart.totalPrice()*0.21)).toFixed(2)}USD$</p>
                 </div>
                 <div className="center">
-                    <p><button className="buttonCart" onClick={handleClick}>Terminar Compra</button></p>
+                <div className="form">
+                    <p className="formP"style={{"fontWeight":"bold"}}>Por favor, ingresa tus datos</p>
+                   <p><input  className="input" type="text" placeholder="Nombre" onChange={(e)=>{setName(e.target.value)}}></input></p>
+                   <p><input  className="input" type="text" placeholder="E-Mail" onChange={(e)=>{setEmail(e.target.value)}}></input></p>
+                   <p><input  className="input" type="text" placeholder="Dirección" onChange={(e)=>{setAdress(e.target.value)}}></input></p>
+                   <p><input  className="input" type="text" placeholder="Telefono" onChange={(e)=>{setPhone(e.target.value)}}></input></p>
+                </div>
+                </div>
+                <div className="center">
+                    <p><button type="submit" className="buttonCart" onClick={handleClick}>Terminar Compra</button></p>
                     <p><button onClick={()=> cart.clear()} className="buttonCart">Borrar Carrito</button></p>
                 </div>
             </div>
             :<div className="section">
-                <p>Tu carrito está vacio</p>
+                <p className="center">Tu carrito está vacio</p>
                 <p><Link to="/"><button className="buttonCart">Ir a la tienda</button></Link></p>
             </div>
         }

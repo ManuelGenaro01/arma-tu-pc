@@ -8,6 +8,8 @@
 }
 body{
   font-size: 1.01rem;
+  background-color: #d1dbeb
+  ;
 }
 .App-logo {
   height: 40vmin;
@@ -113,14 +115,19 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top:2rem
+  padding:2rem;
+  width: 60%;
+  border-radius: 8px;
+  background-color: white;
+  height:100%;
+  box-shadow: 3px 3px 10px 2px #8998b0
 }
 .itemIMG{
   padding-right:3rem;
   text-align: center;
 }
 .itemDesc{
-  width:20%;
+  width:100%;
   text-align: center;
 }
 .itemBuy{
@@ -133,6 +140,9 @@ body{
 .itemList{
   padding: 1rem;
   border-radius: 8px;
+  background-color: white;
+  height:100%;
+  box-shadow: 3px 3px 10px 2px #8998b0
 }
 .itemList:hover{
   background-color: grey;
@@ -142,7 +152,11 @@ body{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 3px 3px 10px 2px #8998b0
 }
 .center{
   display: flex;
@@ -175,6 +189,36 @@ body{
 }
 .text{
   text-decoration: none;
+}
+.imgSize{
+  width: 200px;
+}
+.form{
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 0.1rem;
+  border-radius: 8px;
+  width: 45%;
+  background-color: white;
+  box-shadow: 3px 3px 10px 2px #8998b0
+}
+.form p{
+  padding-top: 0.3rem;
+  padding-bottom:0.5rem;
+}
+.formP{
+  font-size: 20px;
+  padding-bottom: 0.3rem;
+}
+.form .input{
+  border: 0.1rem solid grey;
+  text-align: center;
+  border-radius: 8px;
+  width:500px;
+  height: 2rem;
 }
 @keyframes App-logo-spin {
   from {

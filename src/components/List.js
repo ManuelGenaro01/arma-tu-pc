@@ -8,7 +8,7 @@ const List = (props) => {
         <div className="item">
         <Link to={`/item/${props.id}`} className="itemID">
             <div className="itemList">
-                <p><img src={props.img} alt={props.nombre} /></p>
+                <p><img src={props.img} alt={props.nombre} className="imgSize" /></p>
                 <p>{props.nombre}</p>
                 <p>{props.precio}</p>
                 <p style={{"fontWeight":"bold"}}>Stock={props.stock}</p>
