@@ -1,18 +1,25 @@
 import React, { useContext, useState } from "react";
 import ItemCount from "./ItemCount"
 import {Link} from "react-router-dom"
+import {toast} from "react-toastify"
 import { CartContext } from "./CartContext";
 
 const ItemDetail=({items})=>{
     const [cantidad, setCantidad]= useState(0)
     const test = useContext(CartContext)
-    
     const onAdd=(cantidad)=>{
         if(cantidad>0){
-        alert("Has añadido "+cantidad+" elementos al carrito")
         setCantidad(cantidad)
         test.addToCart(items, cantidad)
         }
+        toast(`Se agregaron ${cantidad} elementos al carrito`,{
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+        })
     }
     return(
         <div className="itemDetail">

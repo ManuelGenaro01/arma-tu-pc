@@ -6,6 +6,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from "./components/Cart"
 import CartContextProvider from "./components/CartContext"
+import {ToastContainer} from "react-toastify"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/Cart" element={<Cart />}/>
       </Routes>
     </BrowserRouter>
+    <ToastContainer toastStyle={{ backgroundColor: "#2a56b5", color: "white" }}/>
     </CartContextProvider>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cart =({initial, stock, onAdd})=>{
     const [cantidad, setRates]= useState(0)
-    
     const Aumentar =()=>{
         if(cantidad<stock){
         setRates(cantidad+1)
