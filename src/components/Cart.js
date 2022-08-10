@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 import {Link} from "react-router-dom"
-import { addDoc, collection, getFirestore, updateDoc, doc, increment } from "firebase/firestore";
+import { addDoc, collection, getFirestore, updateDoc, doc, increment, serverTimestamp } from "firebase/firestore";
 import swal from "sweetalert2"
 
 const Cart = () =>{
@@ -14,6 +14,7 @@ const Cart = () =>{
             phone:"123123",
             address:"12"
         },
+        date: serverTimestamp(),
         items:cart.cartValue.map(products => ({id: products.id, nombre:products.nombre, price:products.precio, quantity:products.cantidad})) ,
         total: cart.totalPrice()
     }
