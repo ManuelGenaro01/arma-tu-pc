@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/Cart" element={<Cart />}/>
       </Routes>
     </BrowserRouter>
-    <ToastContainer toastStyle={{ backgroundColor: "#2a56b5", color: "white" }}/>
+    <ToastContainer toastStyle={{ backgroundColor: "white", color: "black",fontFamily: "Montserrat , Sans-Serif", textAlign:"center" }}/>
     </CartContextProvider>
   );
 }

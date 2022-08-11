@@ -1,5 +1,4 @@
 import {createContext, useState } from "react";
-import {toast} from "react-toastify"
 import swal from "sweetalert2"
 
 export const CartContext = createContext();
@@ -25,13 +24,6 @@ const CartContextProvider = ({children}) =>{
     const borrarItem =(id)=>{
         let newCartValue=cartValue.filter(item => item.id !== id)
         setCartValue(newCartValue)
-        toast(`El elemento fue eliminado`,{
-            position: "bottom-center",
-            autoClose: 3000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,})
     }
     const clearOrder=()=>{
         setCartValue([])
@@ -66,7 +58,7 @@ const CartContextProvider = ({children}) =>{
             showCancelButton:true,
             confirmButtonText:"Confirmar",
             cancelButtonText:"Cancelar",
-            confirmButtonColor:"#2a56b5"
+            confirmButtonColor:"#2a56b5",
           })
           .then((willDelete) => {
             if (willDelete.isConfirmed) {

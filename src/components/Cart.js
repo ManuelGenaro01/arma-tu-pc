@@ -74,19 +74,21 @@ const Cart = () =>{
                     <p>IVA 21%: {(cart.totalPrice()*0.21).toFixed(2)}USD$</p>
                     <p style={{"fontWeight":"bold"}}>Total: {(cart.totalPrice()+(cart.totalPrice()*0.21)).toFixed(2)}USD$</p>
                 </div>
+                <form onSubmit={handleClick}>
                 <div className="center">
-                <div className="form">
-                    <p className="formP"style={{"fontWeight":"bold"}}>Por favor, ingresa tus datos</p>
-                   <p><input  className="input" type="text" placeholder="Nombre" onChange={(e)=>{setName(e.target.value)}}></input></p>
-                   <p><input  className="input" type="text" placeholder="E-Mail" onChange={(e)=>{setEmail(e.target.value)}}></input></p>
-                   <p><input  className="input" type="text" placeholder="Dirección" onChange={(e)=>{setAdress(e.target.value)}}></input></p>
-                   <p><input  className="input" type="text" placeholder="Telefono" onChange={(e)=>{setPhone(e.target.value)}}></input></p>
-                </div>
+                    <div className="form">
+                        <p className="formP"style={{"fontWeight":"bold"}}>Por favor, ingresa tus datos</p>
+                        <p><input  className="input" type="text" placeholder="Nombre" onChange={(e)=>{setName(e.target.value)}} required/></p>
+                        <p><input  className="input" type="text" placeholder="E-Mail" onChange={(e)=>{setEmail(e.target.value)}} required/></p>
+                        <p><input  className="input" type="text" placeholder="Dirección" onChange={(e)=>{setAdress(e.target.value)}} required/></p>
+                        <p><input  className="input" type="text" placeholder="Telefono" onChange={(e)=>{setPhone(e.target.value)}}></input></p>
+                    </div>
                 </div>
                 <div className="center">
-                    <p><button type="submit" className="buttonCart" onClick={handleClick}>Terminar Compra</button></p>
-                    <p><button onClick={()=> cart.clear()} className="buttonCart">Borrar Carrito</button></p>
+                    <p><button type="submit" className="buttonCart">Terminar Compra</button></p>
+                    <p><button type="button" onClick={()=> cart.clear()} className="buttonCart">Borrar Carrito</button></p>
                 </div>
+                </form>
             </div>
             :<div className="section">
                 <p className="center">Tu carrito está vacio</p>

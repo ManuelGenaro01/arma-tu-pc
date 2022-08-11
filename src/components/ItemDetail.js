@@ -8,11 +8,21 @@ const ItemDetail=({items})=>{
     const [cantidad, setCantidad]= useState(0)
     const test = useContext(CartContext)
     const onAdd=(cantidad)=>{
-        if(cantidad>0){
+        if(cantidad>0&&cantidad<2){
         setCantidad(cantidad)
         test.addToCart(items, cantidad)
-        }
-        toast(`Se agregaron ${cantidad} elementos al carrito`,{
+        toast.success(`Se agregó ${cantidad} elemento al carrito`,{
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+        })}
+        else{
+        setCantidad(cantidad)
+        test.addToCart(items, cantidad)
+        toast.success(`Se agregaron ${cantidad} elementos al carrito`,{
             position: "bottom-center",
             autoClose: 3000,
             hideProgressBar: true,
@@ -20,6 +30,8 @@ const ItemDetail=({items})=>{
             pauseOnHover: false,
             draggable: true,
         })
+        }
+        
     }
     return(
         <div className="center">

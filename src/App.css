@@ -8,8 +8,8 @@
 }
 body{
   font-size: 1.01rem;
-  background-color: #d1dbeb
-  ;
+  background-color: #d1dbeb;
+  font-family: "Montserrat", sans-serif;
 }
 .App-logo {
   height: 40vmin;
@@ -24,8 +24,6 @@ body{
 .logo{
   font-weight: bold;
   text-decoration: none;
-  padding-right: 2rem;
-  padding-left: 2rem;
   color:white;
 }
 .navBar{
@@ -36,8 +34,13 @@ body{
   margin: 0;
   padding: 0;
   overflow: hidden;
+}
+.navFlex{
   background-color: #2a56b5;
-  width: 100%;
+  align-items: center;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 .button{
   padding-top: 1rem;
@@ -56,6 +59,7 @@ body{
   padding-right: 1rem;
 }
 .buttonCart{
+  font-family: "Montserrat", sans-serif;
   background-color: #2a56b5;
   border: none;
   color: white;
@@ -65,6 +69,7 @@ body{
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  cursor: pointer;
 }
 .buttonCart:hover{
   background-color: #132959;
@@ -86,7 +91,10 @@ body{
   display: block;
   color: white;
   text-align: center;
+  text-decoration: none;
   padding: 14px 16px;
+}
+.cart{
   text-decoration: none;
 }
 .a:hover{
@@ -120,6 +128,7 @@ body{
   border-radius: 8px;
   background-color: white;
   height:100%;
+  padding: 1rem;
   box-shadow: 3px 3px 10px 2px #8998b0
 }
 .itemIMG{
@@ -161,7 +170,16 @@ body{
 .center{
   display: flex;
   justify-content: space-around;
-  padding: 1rem;
+  padding:1rem
+}
+.centerNav{
+  display: flex;
+  justify-content: center;
+}
+.left{
+  display: flex;
+  width:13%;
+  justify-content: flex-end;
 }
 .listCartIMG{
   width: 25%;
@@ -188,6 +206,7 @@ body{
   color: white;
 }
 .text{
+  padding-left: 0.3rem;
   text-decoration: none;
 }
 .imgSize{
@@ -214,6 +233,7 @@ body{
   padding-bottom: 0.3rem;
 }
 .form .input{
+  font-family: "Montserrat", sans-serif;
   border: 0.1rem solid grey;
   text-align: center;
   border-radius: 8px;
