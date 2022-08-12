@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom"
 
 const List = (props) => {
-    if(props.stock!==0){
+    if(props.stock>0){
     return(
         <>  
         <div className="item">

@@ -23,25 +23,24 @@ const Cart = () =>{
         items:cart.cartValue.map(products => ({id: products.id, nombre:products.nombre, price:products.precio, quantity:products.cantidad})) ,
         total: (cart.totalPrice()*1.21).toFixed(2)
     }
-    
 
     const handleClick=(e)=>{
         e.preventDefault();
-        const db=getFirestore();
-        const orderCollection=collection(db, "order")
-        addDoc(orderCollection, order)
-        .then(({id})=>swal.fire({
+            const db=getFirestore();
+            const orderCollection=collection(db, "order")
+            addDoc(orderCollection, order)
+            .then(({id})=>swal.fire({
                 title:"Tu compra fue realizada!",
                 text:`Tu orden de compra es ${id}`,
                 icon:"success",
                 confirmButtonText:"Aceptar",
                 confirmButtonColor:"#2a56b5"
             },
-        cart.clearOrder()
+            cart.clearOrder()
         ))
-        cart.cartValue.forEach(async(item)=>{
-            const itemRef=doc(db,"products",item.id)
-            await updateDoc(itemRef, {
+            cart.cartValue.forEach(async(item)=>{
+                const itemRef=doc(db,"products",item.id)
+                await updateDoc(itemRef, {
                 stock:increment(-item.cantidad)
             })
         })
@@ -52,8 +51,8 @@ const Cart = () =>{
         <h1 className="section">Tu carrito</h1>
         {
             cart.cartValue.length>0 && cart.cartValue.map(item =>(
-                <div className="center">
-                <div className="listCart" key={item.nombre}>
+                <div className="center" key={item.nombre}>
+                <div className="listCart">
                     <p className="listCartImg"><img src={item.img} alt={item.nombre} className="imgSize"/></p>
                     <div className="listCartNP">
                         <p>{item.nombre}</p>

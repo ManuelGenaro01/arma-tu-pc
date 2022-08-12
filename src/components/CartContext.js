@@ -13,7 +13,8 @@ const CartContextProvider = ({children}) =>{
             nombre: item.nombre,
             img: item.img,
             precio: item.precio,
-            cantidad: cantidad + nuevaCantidad
+            cantidad: cantidad + nuevaCantidad,
+            stock:item.stock
         }])
     }
 
@@ -78,8 +79,11 @@ const CartContextProvider = ({children}) =>{
     const totalProductos=()=>{
         return cartValue.reduce((prev, prodActual)=>prev+prodActual.cantidad,0)
     }
+    const stock=()=>{
+      return cartValue.reduce((prev, act)=>prev+act.stock,0)
+    }
     return(
-        <CartContext.Provider value={{cartValue, addToCart, removeItem, clear, isInCart, totalPrice, totalProductos, clearOrder}}>
+        <CartContext.Provider value={{cartValue, addToCart, removeItem, clear, isInCart, totalPrice, totalProductos, clearOrder, stock}}>
             {children}
         </CartContext.Provider>
     )

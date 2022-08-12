@@ -13,23 +13,34 @@ const ItemDetail=({items})=>{
         test.addToCart(items, cantidad)
         toast.success(`Se agregó ${cantidad} elemento al carrito`,{
             position: "bottom-center",
-            autoClose: 3000,
+            autoClose: 2000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: false,
             draggable: true,
         })}
-        else{
+        else if(cantidad>=2){
         setCantidad(cantidad)
         test.addToCart(items, cantidad)
         toast.success(`Se agregaron ${cantidad} elementos al carrito`,{
             position: "bottom-center",
-            autoClose: 3000,
+            autoClose: 2000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: false,
             draggable: true,
         })
+        }
+        else{
+            toast.error("Por favor, elige la cantidad",
+            {
+            position: "bottom-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            })
         }
         
     }
