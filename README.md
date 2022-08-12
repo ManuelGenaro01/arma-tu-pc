@@ -1,3 +1,59 @@
+
+# -Todo Computación
+
+Este es mi proyecto final de ReactJs en Coderhouse.
+Este es una pagina de computación donde podrás comprar diferentes componentes para tu PC
+
+## -Secciones
+Esta pagina cuenta con 7 secciones diferentes:
+
+1. **Pagina Principal:**
+
+- Esta sección muestra todos los componentes para tu computadora
+
+2. **Procesadores:**
+
+- Esta sección muestra los diferentes procesadores disponibles
+
+3. **Motherboards**
+
+- Aquí se muestran las direfentes placas madres disponibles
+
+4. **GPU**
+
+- Aquí se muestran las diferentes placas de video disponibles
+
+5. **Memorias Ram**
+
+- Aquí se muestran los diferentes tipos de Memorias Ram para tu PC
+
+6. **Almacenamiento**
+- Aquí se muestran los diferentes tipos de almacenaminto para tu PC
+7. **Carrito**
+- Aquí podrás ver tu carrito y los diferentes elementos que elegiste
+
+### -Detalles de los productos
+
+Está pagina cuenta con detalles individuales para cada uno de los productos, donde podrás ver una breve descripción del mismo, junto con su Stock disponible, y podrás elegir una cantidad para agregar al carrito
+
+### -Checkout
+
+Luego, en el carrito, tendrás un formulario donde tendrás que llenar con tus datos, así puedes comprar los objetos. Una vez comprados, se te dará un numero de ID de tu compra
+
+#### -Diferentes API y Frameworks utilizados en el proyecto
+
+1. **[Firebase](https://firebase.google.com/)**
+- Para tomar de una base de datos los diferentes productos, y para enviar la orden de compra con los datos del comprador
+
+2. **[Toastify](https://www.npmjs.com/package/react-toastify)**
+- Para mostrar diferentes mensajes al hacer alguna acción (Se agregó un elemento al carrito, etc...)
+
+3. **[SweetAlert2](https://github.com/sweetalert2/sweetalert2)**
+- Para mostrar diferentes mensajes tipo "Alert" con alguna advertencia, error o si alguna acción fue completada
+## Autor
+
+- [@ManuelGenaro01](https://github.com/ManuelGenaro01)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
