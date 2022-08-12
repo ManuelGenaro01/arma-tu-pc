@@ -10,6 +10,8 @@ const Cart = () =>{
     const [email, setEmail]=useState("")
     const [phone, setPhone]=useState("")
     const [address, setAdress]=useState("")
+    let compraStock=[]
+    let hayStock=false
 
 
     let order={
@@ -23,9 +25,34 @@ const Cart = () =>{
         items:cart.cartValue.map(products => ({id: products.id, nombre:products.nombre, price:products.precio, quantity:products.cantidad})) ,
         total: (cart.totalPrice()*1.21).toFixed(2)
     }
+    const checkStock=()=>{
+        cart.cartValue.forEach
+            (product=>
+                {
+                    if(compraStock.length!==cart.cartValue.length){
+                    product.stock>=product.cantidad&&compraStock?compraStock.push(1):compraStock.push(0)
+                    }
+                    else{
+
+                    }
+                }
+            )
+            let sum=compraStock.reduce((prev, act)=>{return prev+act},0)
+            console.log(compraStock)
+            console.log(sum)
+            console.log(cart.cartValue.length)
+            if(sum===cart.cartValue.length){
+                hayStock=true;
+            }
+            else{
+                hayStock=false;
+            }
+    }
 
     const handleClick=(e)=>{
         e.preventDefault();
+        checkStock()
+        if(hayStock){
             const db=getFirestore();
             const orderCollection=collection(db, "order")
             addDoc(orderCollection, order)
@@ -44,6 +71,13 @@ const Cart = () =>{
                 stock:increment(-item.cantidad)
             })
         })
+        }
+        else{swal.fire({
+            title:"No hay suficiente stock",
+            icon:"error",
+            confirmButtonText:"Aceptar",
+            confirmButtonColor:"#2a56b5"})
+        }
     }
 
     return(
