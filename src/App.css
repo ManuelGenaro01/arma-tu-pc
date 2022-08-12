@@ -40,7 +40,7 @@ body{
   align-items: center;
   display:flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 .button{
   padding-top: 1rem;
